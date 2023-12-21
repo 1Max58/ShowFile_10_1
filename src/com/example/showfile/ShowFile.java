@@ -25,12 +25,12 @@ public class ShowFile {
             } while (bajt != -1);
         } catch (IOException e) {
             System.out.println("Error reading file");
-        }
-
-        try {
-            fis.close();
-        } catch (IOException e) {
-            System.out.println("Error closing file.");
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException e) {
+                System.out.println("Error closing file.");
+            }
         }
     }
 }
